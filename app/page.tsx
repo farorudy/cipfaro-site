@@ -1,267 +1,111 @@
-import Image from "next/image";
-import Link from "next/link";
-import { SectionTitle } from "@/components/SectionTitle";
-import { TrainingCard } from "@/components/TrainingCard";
-import { SITE } from "@/lib/site";
+import Link from 'next/link'
+import { ArrowRight, CheckCircle2, Download, ExternalLink } from 'lucide-react'
+import { HomeHero } from '@/components/home-hero'
+import { HomeWhy } from '@/components/home-why'
+import { HomeProcess } from '@/components/home-process'
+import { FormationCard } from '@/components/formation-card'
+import { CtaBand } from '@/components/cta-band'
+import { formations } from '@/lib/formations'
+import { site } from '@/lib/site'
 
-const advantages = [
-  {
-    icon: "👥",
-    title: "Accompagnement personnalisé",
-    text: "Un suivi individualisé tout au long de votre parcours pour favoriser votre réussite.",
-  },
-  {
-    icon: "✓",
-    title: "Formations professionnelles",
-    text: "Des cursus reconnus et orientés vers l'emploi et l'insertion durable.",
-  },
-  {
-    icon: "⌖",
-    title: "Ancrage local en Guadeloupe",
-    text: "Une équipe au coeur du territoire, proche des besoins des stagiaires et des employeurs.",
-  },
-  {
-    icon: "▣",
-    title: "Plateforme Moodle dédiée",
-    text: "Un espace numérique pour apprendre, échanger et progresser à votre rythme.",
-  },
-];
+export default function Page() {
+  const highlighted = formations.slice(0, 3)
 
-const ctaCards = [
-  {
-    icon: "✎",
-    title: "Pré-inscription",
-    text: "Réservez votre place en quelques minutes.",
-    href: "/preinscription",
-    cta: "Se pré-inscrire",
-  },
-  {
-    icon: "☷",
-    title: "Demande de devis",
-    text: "Obtenez une proposition adaptée à votre projet.",
-    href: "/devis",
-    cta: "Demander un devis",
-  },
-  {
-    icon: "↗",
-    title: "Accès Moodle",
-    text: "Connectez-vous à votre plateforme de formation.",
-    href: SITE.moodle,
-    cta: "Accéder à Moodle",
-    external: true,
-  },
-];
-
-const assurances = [
-  "Réponse rapide sous 48h",
-  "Devis personnalisé et gratuit",
-  "Financement CPF, OPCO, France Travail",
-  "Accompagnement de A à Z",
-];
-
-const certificatePoints = [
-  "Document visible dès la page d'accueil",
-  "Présentation claire pour les stagiaires et partenaires",
-  "Mise en avant de l'engagement qualité de l'organisme",
-];
-
-export default function HomePage() {
   return (
-    <>
-      <section className="home-hero">
-        <div className="container home-hero-grid">
-          <div className="home-hero-copy">
-            <span className="hero-kicker">Organisme de formation • Guadeloupe</span>
-            <h1>Formez-vous aux métiers de l'insertion professionnelle avec CIP FARO Rudy</h1>
-            <p>
-              Un organisme de formation en Guadeloupe engagé dans l'accompagnement,
-              la montée en compétences et la réussite professionnelle.
-            </p>
-            <div className="button-row">
-              <Link className="button accent" href="/preinscription">
-                Se pré-inscrire <span aria-hidden="true">-&gt;</span>
-              </Link>
-              <Link className="button light" href="/devis">
-                Demander un devis
-              </Link>
+    <main>
+      <HomeHero />
+      <HomeWhy />
+
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                Nos formations
+              </p>
+              <h2 className="mt-3 text-balance font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                Des parcours pour se qualifier et accompagner les autres
+              </h2>
             </div>
+            <Link
+              href="/formations"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+            >
+              Voir toutes les formations
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           </div>
-          <div className="home-hero-panel" aria-label="Stagiaires en formation">
-            <Image
-              src="/hero-formation.png"
-              alt="Stagiaires en formation avec un conseiller en insertion professionnelle"
-              width={592}
-              height={442}
-              priority
-            />
-          </div>
-        </div>
-      </section>
 
-      <section className="container cta-overlap">
-        <div className="grid grid-3">
-          {ctaCards.map((card) => {
-            const content = (
-              <article className="action-card">
-                <span className="icon-badge">{card.icon}</span>
-                <h3>{card.title}</h3>
-                <p>{card.text}</p>
-                <div className="text-link">
-                  {card.cta} <span aria-hidden="true">-&gt;</span>
-                </div>
-              </article>
-            );
-
-            return card.external ? (
-              <a key={card.title} href={card.href} target="_blank" rel="noopener noreferrer">
-                {content}
-              </a>
-            ) : (
-              <Link key={card.title} href={card.href}>
-                {content}
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <SectionTitle
-            eyebrow="Notre engagement"
-            title="Pourquoi choisir CIP FARO Rudy ?"
-            subtitle="Quatre piliers qui font la différence pour votre parcours de formation."
-          />
-          <div className="grid grid-4 section-gap">
-            {advantages.map((advantage) => (
-              <article className="card" key={advantage.title}>
-                <span className="icon-badge soft">{advantage.icon}</span>
-                <h3>{advantage.title}</h3>
-                <p>{advantage.text}</p>
-              </article>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {highlighted.map((f) => (
+              <FormationCard key={f.slug} formation={f} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section subtle">
-        <div className="container">
-          <SectionTitle
-            eyebrow="Nos parcours"
-            title="Nos parcours de formation"
-            subtitle="Une formation phare et des parcours complémentaires pour l'insertion et l'évolution professionnelle."
-          />
-          <div className="grid grid-3 section-gap">
-            <TrainingCard
-              featured
-              badge="Formation phare"
-              title="TP Conseiller en Insertion Professionnelle"
-              description="Formation qualifiante préparant aux missions d'accueil, d'accompagnement et de relation avec les entreprises."
-              ctaLabel="Découvrir"
-              ctaHref="/tp-cip"
-            />
-            <TrainingCard
-              title="Bureautique & numérique"
-              description="Maîtrisez les outils essentiels du quotidien professionnel : Word, Excel et communication numérique."
-            />
-            <TrainingCard
-              title="Accompagnement à la création d'entreprise"
-              description="Construisez votre projet entrepreneurial avec un accompagnement structuré et adapté."
-            />
-          </div>
-          <div className="centered-action">
-            <Link className="button secondary" href="/formations">
-              Voir toutes nos formations <span aria-hidden="true">-&gt;</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HomeProcess />
 
-      <section className="section">
-        <div className="container certificate-section">
+      <section className="bg-background">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8 lg:py-24">
           <div>
-            <p className="eyebrow">Certificat</p>
-            <h2 className="section-title">Un document de confiance mis en avant.</h2>
-            <p className="lead">
-              Le certificat CIP FARO Rudy est intégré à la page d'accueil pour
-              rassurer les visiteurs, les stagiaires et les partenaires dès leur
-              arrivée sur le site.
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Certification
             </p>
-            <ul className="certificate-list">
-              {certificatePoints.map((item) => (
-                <li key={item}>
-                  <span aria-hidden="true">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="button-row">
-              <a className="button secondary" href={SITE.certificate} target="_blank" rel="noopener noreferrer">
-                Vérifier sur ICPF <span aria-hidden="true">-&gt;</span>
+            <h2 className="mt-3 text-balance font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              Organisme certifie Qualiopi
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              CIP RUDY FARO est certifie pour les actions de formation. Cette
+              certification atteste de la qualite du processus mis en oeuvre
+              pour le developpement des competences.
+            </p>
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground">
+              <CheckCircle2 className="size-4 text-primary" aria-hidden="true" />
+              Validite : du 31/03/2025 au 30/03/2028
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={site.certificate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
+              >
+                Consulter la fiche ICPF
+                <ExternalLink className="size-4" aria-hidden="true" />
               </a>
-              <a className="button secondary" href={SITE.certificatePdf} target="_blank" rel="noopener noreferrer">
-                Ouvrir le PDF <span aria-hidden="true">-&gt;</span>
+              <a
+                href={site.certificateDownload}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+              >
+                Telecharger le certificat
+                <Download className="size-4" aria-hidden="true" />
               </a>
             </div>
           </div>
-          <div className="certificate-frame">
+          <div className="overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-sm">
             <object
-              className="certificate-pdf"
-              data={SITE.certificatePdf}
+              className="h-[520px] w-full rounded-xl bg-background"
+              data={site.certificatePdf}
               type="application/pdf"
               aria-label="Certificat officiel CIP FARO Rudy"
             >
-              <Image
-                src="/certificat-cip-faro.svg"
-                alt="Certificat CIP FARO Rudy"
-                width={900}
-                height={640}
-              />
+              <a
+                href={site.certificateDownload}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-80 items-center justify-center rounded-xl bg-secondary p-8 text-center font-semibold text-primary"
+              >
+                Ouvrir le certificat officiel
+              </a>
             </object>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="project-cta">
-            <div>
-              <h2>Démarrez votre projet de formation</h2>
-              <p>
-                Que vous soyez salarié, demandeur d'emploi ou employeur, nos équipes
-                vous accompagnent pour bâtir un parcours adapté à vos objectifs.
-              </p>
-              <div className="button-row">
-                <Link className="button accent" href="/preinscription">
-                  Se pré-inscrire
-                </Link>
-                <Link className="button light" href="/devis">
-                  Demander un devis
-                </Link>
-              </div>
-            </div>
-            <ul className="check-list">
-              {assurances.map((item) => (
-                <li key={item}>
-                  <span aria-hidden="true">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="container moodle-band">
-        <div>
-          <p className="eyebrow">Espace stagiaire</p>
-          <h2>Accédez à votre plateforme Moodle</h2>
-          <p>Suivez vos cours, ressources et activités en ligne, 24h/24.</p>
-        </div>
-        <a className="button accent" href={SITE.moodle} target="_blank" rel="noopener noreferrer">
-          Accéder à Moodle
-        </a>
-      </section>
-    </>
-  );
+      <CtaBand />
+    </main>
+  )
 }
