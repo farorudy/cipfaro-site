@@ -195,14 +195,29 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            <div className="button-row">
+              <a className="button secondary" href={SITE.certificate} target="_blank" rel="noopener noreferrer">
+                Vérifier sur ICPF <span aria-hidden="true">-&gt;</span>
+              </a>
+              <a className="button secondary" href={SITE.certificatePdf} target="_blank" rel="noopener noreferrer">
+                Ouvrir le PDF <span aria-hidden="true">-&gt;</span>
+              </a>
+            </div>
           </div>
           <div className="certificate-frame">
-            <Image
-              src="/certificat-cip-faro.svg"
-              alt="Certificat CIP FARO Rudy"
-              width={900}
-              height={640}
-            />
+            <object
+              className="certificate-pdf"
+              data={SITE.certificatePdf}
+              type="application/pdf"
+              aria-label="Certificat officiel CIP FARO Rudy"
+            >
+              <Image
+                src="/certificat-cip-faro.svg"
+                alt="Certificat CIP FARO Rudy"
+                width={900}
+                height={640}
+              />
+            </object>
           </div>
         </div>
       </section>
@@ -244,7 +259,7 @@ export default function HomePage() {
           <p>Suivez vos cours, ressources et activités en ligne, 24h/24.</p>
         </div>
         <a className="button accent" href={SITE.moodle} target="_blank" rel="noopener noreferrer">
-          Accéder à Moodle <span aria-hidden="true">-&gt;</span>
+          Accéder à Moodle
         </a>
       </section>
     </>
