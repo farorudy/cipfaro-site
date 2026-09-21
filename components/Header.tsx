@@ -29,7 +29,7 @@ export default function Header() {
           ))}
         </nav>
         <a className="moodle-button" href={SITE.moodle} target="_blank" rel="noopener noreferrer">
-          Se connecter à la plateforme
+          Accéder aux formations en ligne
         </a>
       </div>
     </header>
