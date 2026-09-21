@@ -6,3 +6,5 @@ out/
 .vercel/
 .DS_Store
 Thumbs.db
+*.csv
+*.CSV
