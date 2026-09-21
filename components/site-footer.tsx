@@ -77,11 +77,20 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-xs text-muted-foreground sm:px-6 lg:px-8">
+          <nav aria-label="Informations légales" className="flex flex-wrap gap-x-4 gap-y-2">
+            <Link href="/mentions-legales" className="hover:text-foreground">Mentions légales</Link>
+            <Link href="/confidentialite" className="hover:text-foreground">Confidentialité</Link>
+            <Link href="/conditions-generales" className="hover:text-foreground">Conditions générales de vente</Link>
+            <Link href="/qualite" className="hover:text-foreground">Qualité et résultats</Link>
+            <Link href="/reclamation" className="hover:text-foreground">Réclamation</Link>
+          </nav>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.legalName} — SIRET {site.siret}
           </p>
           <p>Tous droits réservés.</p>
+          </div>
         </div>
       </div>
     </footer>

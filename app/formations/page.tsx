@@ -8,51 +8,51 @@ import { site } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Nos domaines de formation',
   description:
-    "Des parcours professionnalisants, certifiants et adaptes aux besoins du territoire : insertion, numerique, IA, bureautique, entrepreneuriat et formation de formateurs.",
+    "Des parcours professionnalisants, certifiants et adaptés aux besoins du territoire : insertion, numérique, IA, bureautique, entrepreneuriat et formation de formateurs.",
 }
 
 const domains = [
   {
     title: 'Insertion professionnelle',
     description:
-      "Formations orientees accompagnement, insertion, mediation et developpement de l'employabilite.",
+      "Formations orientées accompagnement, insertion, médiation et développement de l'employabilité.",
     courses: [
       ['Conseiller en insertion professionnelle', 'https://farorudy.fr/course/view.php?id=2'],
       [
-        "Facilitateur numerique de l'insertion professionnelle",
-        'https://farorudy.fr/course/view.php?id=ID_FNIP',
+        "Facilitateur numérique de l'insertion professionnelle",
+        '/contact',
       ],
-      ['Mediateur Numerique', 'https://farorudy.fr/course/view.php?id=ID_MN'],
+      ['Médiateur numérique', '/contact'],
     ],
   },
   {
-    title: 'Numerique & IA',
+    title: 'Numérique & IA',
     description:
-      "Montez en competence sur les outils numeriques, l'intelligence artificielle et la transformation digitale.",
+      "Montez en compétence sur les outils numériques, l'intelligence artificielle et la transformation digitale.",
     courses: [
-      ["Decouverte de l'IA", 'https://farorudy.fr/course/view.php?id=ID_IA_DECOUVERTE'],
+      ["Découverte de l'IA", '/contact'],
       [
-        "Conseiller en mediation digitale et de l'IA",
-        'https://farorudy.fr/course/view.php?id=ID_MEDIATION_IA',
+        "Conseiller en médiation digitale et de l'IA",
+        '/contact',
       ],
-      ['Microsoft Teams', 'https://farorudy.fr/course/view.php?id=ID_TEAMS'],
+      ['Microsoft Teams', '/contact'],
       [
         'Digitalisation des entreprises',
-        'https://farorudy.fr/course/view.php?id=ID_DIGITALISATION',
+        '/contact',
       ],
-      ['Marketing digital', 'https://farorudy.fr/course/view.php?id=ID_MARKETING'],
+      ['Marketing digital', '/contact'],
     ],
   },
   {
     title: 'Bureautique',
     description:
-      'Developpez vos competences operationnelles en bureautique et outils de productivite.',
+      'Développez vos compétences opérationnelles en bureautique et outils de productivité.',
     courses: [
-      ['Initiation a la bureautique', 'https://farorudy.fr/course/view.php?id=ID_BUREAUTIQUE'],
-      ["Excel pour createurs d'entreprise", 'https://farorudy.fr/course/view.php?id=ID_EXCEL'],
+      ['Initiation à la bureautique', '/contact'],
+      ["Excel pour créateurs d'entreprise", '/contact'],
       [
-        'Preparation a la certification Microsoft Office Specialist',
-        'https://farorudy.fr/course/view.php?id=ID_MOS',
+        'Préparation à la certification Microsoft Office Specialist',
+        '/contact',
       ],
     ],
   },
@@ -61,40 +61,40 @@ const domains = [
     description:
       "Concevez, structurez et developpez votre projet d'entreprise avec une approche concrete.",
     courses: [
-      ["Je deviens chef d'entreprise", 'https://farorudy.fr/course/view.php?id=ID_CHEF_ENTREPRISE'],
+      ["Je deviens chef d'entreprise", '/contact'],
       [
         'Concevoir et developper un projet entrepreneurial',
-        'https://farorudy.fr/course/view.php?id=ID_PROJET_ENTREPRENEURIAL',
+        '/contact',
       ],
       [
         'Action de formation pour createurs et repreneurs',
-        'https://farorudy.fr/course/view.php?id=ID_CREATEURS_REPRENEURS',
+        '/contact',
       ],
       [
-        "Preparation a la certification Entrepreneur de la TPE",
-        'https://farorudy.fr/course/view.php?id=ID_TPE',
+        "Préparation à la certification Entrepreneur de la TPE",
+        '/contact',
       ],
     ],
   },
   {
     title: 'Formation de formateurs',
     description:
-      "Professionnalisez vos pratiques pedagogiques et d'animation de formation.",
+      "Professionnalisez vos pratiques pédagogiques et d'animation de formation.",
     courses: [
-      ['TP - Formateur professionnel d adultes', 'https://farorudy.fr/course/view.php?id=11'],
+      ["TP – Formateur professionnel d'adultes", 'https://farorudy.fr/course/view.php?id=11'],
     ],
   },
   {
-    title: 'Audiovisuel & cohesion',
+    title: 'Audiovisuel & cohésion',
     description:
-      'Formations techniques et humaines pour renforcer les competences transversales et collaboratives.',
+      'Formations techniques et humaines pour renforcer les compétences transversales et collaboratives.',
     courses: [
       [
-        "Maitrisez les techniques de l'image et du son",
-        'https://farorudy.fr/course/view.php?id=ID_IMAGE_SON',
+        "Maîtrisez les techniques de l'image et du son",
+        '/contact',
       ],
-      ["Cohesion d'equipes", 'https://farorudy.fr/course/view.php?id=ID_COHESION'],
-      ['Sauveteur Secouriste du Travail', 'https://farorudy.fr/course/view.php?id=ID_SST'],
+      ["Cohésion d'équipes", '/contact'],
+      ['Sauveteur secouriste du travail', '/contact'],
     ],
   },
 ] as const
@@ -104,8 +104,8 @@ export default function FormationsPage() {
     <main>
       <PageHero
         eyebrow="Nos domaines de formation"
-        title="Des parcours professionnalisants, certifiants et adaptes au territoire"
-        description="Insertion professionnelle, numerique, IA, bureautique, entrepreneuriat, formation de formateurs et competences transversales : nos parcours repondent aux besoins des stagiaires, entreprises et partenaires."
+        title="Des parcours professionnalisants, certifiants et adaptés au territoire"
+        description="Insertion professionnelle, numérique, IA, bureautique, entrepreneuriat, formation de formateurs et compétences transversales : nos parcours répondent aux besoins des stagiaires, entreprises et partenaires."
       />
 
       <section className="bg-background">
@@ -150,18 +150,18 @@ export default function FormationsPage() {
           <div className="grid gap-8 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                Organisme certifie Qualiopi
+                Organisme certifié Qualiopi
               </p>
               <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
-                CIP RUDY FARO est certifie pour les actions de formation.
+                C.I.P FARO est certifié pour les actions de formation.
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Cette certification atteste de la qualite du processus mis en
-                oeuvre pour le developpement des competences.
+                Cette certification atteste de la qualité du processus mis en
+                œuvre pour le développement des compétences.
               </p>
               <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground">
                 <CheckCircle2 className="size-4 text-primary" aria-hidden="true" />
-                Validite : du 31/03/2025 au 30/03/2028
+                Validité : du 31/03/2025 au 30/03/2028
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
@@ -180,7 +180,7 @@ export default function FormationsPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
               >
-                Telecharger le certificat
+                Télécharger le certificat
                 <Download className="size-4" aria-hidden="true" />
               </a>
               <Link

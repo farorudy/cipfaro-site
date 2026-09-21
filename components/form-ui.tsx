@@ -50,4 +50,16 @@ export function FormSuccess({ title, message }: { title: string; message: string
   )
 }
 
+export function PrivacyConsent({ id = 'consent' }: { id?: string }) {
+  return (
+    <label htmlFor={id} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+      <input id={id} name="consent" type="checkbox" required className="mt-1 size-4 rounded border-input accent-[var(--primary)]" />
+      <span>
+        J&apos;accepte l&apos;utilisation de mes informations pour traiter ma demande,
+        conformément à la <a href="/confidentialite" className="font-medium text-primary underline">politique de confidentialité</a>.
+      </span>
+    </label>
+  )
+}
+
 export { cn }

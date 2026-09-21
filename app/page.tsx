@@ -53,16 +53,16 @@ export default function Page() {
               Certification
             </p>
             <h2 className="mt-3 text-balance font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Organisme certifie Qualiopi
+              Organisme certifié Qualiopi
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              CIP RUDY FARO est certifie pour les actions de formation. Cette
-              certification atteste de la qualite du processus mis en oeuvre
-              pour le developpement des competences.
+              C.I.P FARO est certifié pour les actions de formation. Cette
+              certification atteste de la qualité du processus mis en œuvre
+              pour le développement des compétences.
             </p>
             <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-secondary-foreground">
               <CheckCircle2 className="size-4 text-primary" aria-hidden="true" />
-              Validite : du 31/03/2025 au 30/03/2028
+              Validité : du 31/03/2025 au 30/03/2028
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
@@ -80,7 +80,7 @@ export default function Page() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
               >
-                Telecharger le certificat
+                Télécharger le certificat
                 <Download className="size-4" aria-hidden="true" />
               </a>
             </div>

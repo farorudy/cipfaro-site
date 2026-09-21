@@ -8,10 +8,14 @@ import {
   Award,
   CheckCircle2,
   Briefcase,
+  CalendarDays,
+  Euro,
+  MapPin,
 } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { CtaBand } from '@/components/cta-band'
 import { tpCipBlocs } from '@/lib/formations'
+import { site } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'TP Conseiller en Insertion Professionnelle (CIP)',
@@ -20,10 +24,21 @@ export const metadata: Metadata = {
 }
 
 const infos = [
-  { icon: Award, label: 'Certification', value: 'Titre Professionnel — Niveau 5 (Bac+2)' },
-  { icon: Clock, label: 'Durée', value: '7 à 12 mois selon le parcours' },
+  { icon: Award, label: 'Certification', value: 'TP CIP — RNCP37274, niveau 5 (Bac+2)' },
+  { icon: Clock, label: 'Durée', value: '880 h : 495 h en centre et 385 h en entreprise' },
   { icon: BarChart3, label: 'Prérequis', value: 'Niveau Bac ou expérience équivalente' },
   { icon: MonitorSmartphone, label: 'Modalités', value: 'Présentiel et distanciel (Moodle)' },
+  { icon: Euro, label: 'Tarif', value: '5 550 € — financements possibles selon situation' },
+  { icon: MapPin, label: 'Lieu', value: 'Section Chazeau David, Les Abymes' },
+  { icon: CalendarDays, label: 'Prochaine session', value: 'Calendrier communiqué après étude de votre demande' },
+]
+
+const objectives = [
+  'Accueillir une personne ou un groupe et analyser sa demande',
+  'Établir les bases d’un diagnostic partagé et coconstruire un parcours d’insertion',
+  'Accompagner l’élaboration et la réalisation d’un projet professionnel',
+  'Concevoir et animer des ateliers favorisant l’insertion',
+  'Développer une offre de services et une coopération avec les employeurs',
 ]
 
 const debouches = [
@@ -73,6 +88,19 @@ export default function TpCipPage() {
               l&apos;accès à l&apos;emploi ou à la formation, tout en développant
               des relations avec les employeurs du territoire.
             </p>
+
+            <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">
+              Objectifs opérationnels
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">À l’issue de la formation, le stagiaire sera capable de :</p>
+            <ul className="mt-5 flex flex-col gap-3">
+              {objectives.map((objective) => (
+                <li key={objective} className="flex items-start gap-2.5 text-muted-foreground">
+                  <CheckCircle2 className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
+                  {objective}
+                </li>
+              ))}
+            </ul>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               Cette formation certifiante alterne apports théoriques, mises en
               situation pratiques et période en entreprise, pour une montée en
@@ -104,6 +132,37 @@ export default function TpCipPage() {
                 </div>
               ))}
             </div>
+
+            <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Admission et positionnement</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              L’admission comprend l’étude du dossier et du CV, un test de prérequis et un entretien de positionnement. Ce positionnement permet de vérifier l’adéquation du projet, d’identifier les besoins et, lorsque cela est possible, d’individualiser le parcours. Une réponse est apportée sous 48 heures ouvrées après réception de la demande ; la date d’entrée dépend ensuite des places disponibles, du calendrier de session et de l’accord de financement.
+            </p>
+
+            <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Méthodes, moyens et évaluations</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              La formation alterne apports structurés, études de cas, mises en situation, travaux individuels et collectifs, accompagnement au dossier professionnel et immersion en entreprise. Les ressources numériques sont accessibles sur Moodle. La progression est vérifiée par des évaluations diagnostiques, formatives et des évaluations en cours de formation.
+            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              La certification est délivrée par le ministère chargé de l’Emploi après une session d’examen devant jury : mise en situation professionnelle, entretien technique, questionnement à partir de productions et entretien final. Le titre peut être obtenu en totalité ou progressivement par capitalisation des trois certificats de compétences professionnelles (CCP).
+            </p>
+
+            <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Certification, équivalences et poursuite de parcours</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Titre professionnel Conseiller en insertion professionnelle, code RNCP37274, enregistré du 23 mars 2023 au 23 mars 2028. Certificateur : ministère du Travail, du Plein emploi et de l’Insertion. Les correspondances, passerelles et éventuelles équivalences sont à consulter sur la fiche officielle France Compétences.
+            </p>
+            <a href={site.rncpCip} target="_blank" rel="noreferrer" className="mt-4 inline-flex font-semibold text-primary underline">
+              Consulter la fiche RNCP37274 sur France Compétences
+            </a>
+
+            <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Accessibilité et handicap</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Les besoins spécifiques sont étudiés dès la pré-inscription afin de rechercher les aménagements pédagogiques, techniques ou organisationnels adaptés. Contactez le référent handicap de C.I.P FARO au {site.phone} ou à <a href={site.emailHref} className="font-medium text-primary underline">{site.email}</a>.
+            </p>
+
+            <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Résultats</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Les données 2026 ne sont pas encore disponibles ou suffisamment significatives. Elles seront publiées à l’issue de la session avec le nombre de bénéficiaires concerné. Consultez la page <Link href="/qualite" className="font-medium text-primary underline">Qualité et résultats</Link>.
+            </p>
 
             <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">
               Débouchés professionnels

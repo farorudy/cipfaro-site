@@ -1,14 +1,23 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { Field, fieldClass, FormSuccess } from '@/components/form-ui'
+import { Field, fieldClass, FormSuccess, PrivacyConsent } from '@/components/form-ui'
 import { formations } from '@/lib/formations'
 
 export function PreInscriptionForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+  const [sending, setSending] = useState(false)
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setError('')
+    setSending(true)
+    const data = Object.fromEntries(new FormData(e.currentTarget))
+    const response = await fetch('/api/formulaires', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'pre-inscription', ...data }) })
+    const result = await response.json()
+    setSending(false)
+    if (!response.ok) return setError(result.error)
     setSubmitted(true)
   }
 
@@ -22,7 +31,8 @@ export function PreInscriptionForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
+    <form onSubmit={handleSubmit} method="post" className="flex flex-col gap-5">
+      <input name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Prénom" htmlFor="firstName" required>
           <input id="firstName" name="firstName" type="text" required autoComplete="given-name" className={fieldClass} />
@@ -81,19 +91,14 @@ export function PreInscriptionForm() {
         <textarea id="message" name="message" rows={4} className={fieldClass} placeholder="Parlez-nous de votre projet professionnel…" />
       </Field>
 
-      <label className="flex items-start gap-2.5 text-sm text-muted-foreground">
-        <input type="checkbox" required className="mt-1 size-4 rounded border-input accent-[var(--primary)]" />
-        <span>
-          J&apos;accepte que mes informations soient utilisées pour traiter ma
-          demande de pré-inscription.
-        </span>
-      </label>
+      <PrivacyConsent />
+      {error && <p role="alert" className="text-sm font-medium text-red-700">{error}</p>}
 
       <button
         type="submit"
         className="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90 sm:w-auto"
       >
-        Envoyer ma pré-inscription
+        {sending ? 'Envoi en cours…' : 'Envoyer ma pré-inscription'}
       </button>
     </form>
   )

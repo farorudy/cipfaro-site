@@ -17,7 +17,7 @@ export const formations: Formation[] = [
     title: 'Titre Professionnel Conseiller en Insertion Professionnelle',
     shortTitle: 'TP Conseiller en Insertion Professionnelle',
     level: 'Niveau 5 (Bac+2)',
-    duration: '7 à 12 mois',
+    duration: '880 h (495 h centre + 385 h entreprise)',
     format: 'Présentiel & distanciel',
     category: 'Titre Professionnel',
     summary:
