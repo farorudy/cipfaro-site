@@ -70,7 +70,7 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Se connecter à la plateforme
+            Accéder aux formations en ligne
             <ExternalLink className="size-3.5" aria-hidden="true" />
           </a>
         </div>
