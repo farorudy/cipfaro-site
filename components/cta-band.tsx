@@ -34,7 +34,7 @@ export function CtaBand() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-1.5 rounded-md border border-primary-foreground/30 bg-transparent px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
           >
-            Se connecter à la plateforme
+            Accéder aux formations en ligne
             <ExternalLink className="size-3.5" aria-hidden="true" />
           </a>
         </div>
