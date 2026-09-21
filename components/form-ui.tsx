@@ -1,8 +1,13 @@
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
+import { site } from '@/lib/site'
 
 export const fieldClass =
   'mt-1.5 block w-full rounded-md border border-input bg-card px-3.5 py-2.5 text-sm text-foreground shadow-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30'
+
+export function formFallbackMessage(error: string) {
+  return `${error} Contactez-nous au ${site.phone} ou par email à ${site.email}.`
+}
 
 export function Field({
   label,

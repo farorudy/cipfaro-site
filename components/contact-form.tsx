@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { Field, fieldClass, FormSuccess, PrivacyConsent } from '@/components/form-ui'
+import { Field, fieldClass, FormSuccess, PrivacyConsent, formFallbackMessage } from '@/components/form-ui'
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
@@ -16,7 +16,7 @@ export function ContactForm() {
     const response = await fetch('/api/formulaires', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'contact', ...data }) })
     const result = await response.json()
     setSending(false)
-    if (!response.ok) return setError(result.error)
+    if (!response.ok) return setError(formFallbackMessage(result.error || 'Le formulaire est temporairement indisponible.'))
     setSubmitted(true)
   }
 

@@ -4,6 +4,7 @@ import { Fraunces, Inter, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { CookieBanner } from '@/components/cookie-banner'
 
 const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 const fraunces = Fraunces({
@@ -53,7 +54,8 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'false' && process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'false' && <CookieBanner />}
       </body>
     </html>
   )

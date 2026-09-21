@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { Field, fieldClass, FormSuccess, PrivacyConsent } from '@/components/form-ui'
+import { Field, fieldClass, FormSuccess, PrivacyConsent, formFallbackMessage } from '@/components/form-ui'
 import { formations } from '@/lib/formations'
 
 export function PreInscriptionForm() {
@@ -17,7 +17,7 @@ export function PreInscriptionForm() {
     const response = await fetch('/api/formulaires', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'pre-inscription', ...data }) })
     const result = await response.json()
     setSending(false)
-    if (!response.ok) return setError(result.error)
+    if (!response.ok) return setError(formFallbackMessage(result.error || 'La pré-inscription n’a pas pu être envoyée.'))
     setSubmitted(true)
   }
 

@@ -37,6 +37,15 @@ export async function POST(request: Request) {
       )
     }
 
+    const senderDomain = from.toLowerCase().match(/@([^>\s]+)$/)?.[1]
+    const recipientDomain = to.toLowerCase().match(/@([^>\s]+)$/)?.[1]
+    if (!senderDomain || !recipientDomain || senderDomain !== recipientDomain) {
+      return NextResponse.json(
+        { error: "Le domaine expéditeur de l’email n’est pas aligné avec le domaine de production. Vérifiez la configuration du serveur d’emails." },
+        { status: 503 },
+      )
+    }
+
     const labels: Record<string, string> = {
       firstName: 'Prénom', lastName: 'Nom', name: 'Nom complet', contactName: 'Nom du contact',
       email: 'Email', phone: 'Téléphone', subject: 'Sujet', profil: 'Profil',

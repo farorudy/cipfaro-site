@@ -8,6 +8,9 @@ export const metadata: Metadata = { title: 'Déposer une réclamation' }
 export default function ReclamationPage() {
   return <LegalPage title="Réclamation et signalement">
     <p>Une difficulté, une insatisfaction ou un désaccord peut être signalé à C.I.P FARO. Chaque demande est enregistrée, examinée et suivie jusqu’à sa clôture.</p>
+    <div className="mt-4 rounded-lg border border-border bg-secondary/30 p-4 text-sm text-foreground">
+      Délai de réponse : accusé de réception sous 5 jours ouvrés, puis réponse motivée dans la mesure du possible sous 30 jours.
+    </div>
     <h2>Comment nous écrire ?</h2>
     <p>Adressez votre demande à <a href={site.emailHref}>{site.email}</a>, par courrier à {site.address}, ou utilisez notre <Link href="/contact">formulaire de contact</Link> en indiquant « Réclamation » dans le sujet.</p>
     <p>Précisez votre identité, la formation concernée, les faits, la date et la solution attendue. Un accusé de réception est adressé sous 5 jours ouvrés et une réponse motivée est apportée, dans la mesure du possible, sous 30 jours.</p>
