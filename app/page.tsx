@@ -44,6 +44,27 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="bg-secondary/50">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="font-heading text-2xl font-semibold text-foreground sm:text-3xl">
+              Des ateliers numériques pour entreprendre
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Découvrez notre projet de six ateliers pratiques pour les créateurs
+              et les petites entreprises, accessibles même aux débutants.
+            </p>
+          </div>
+          <Link
+            href="/ateliers"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 font-semibold text-primary-foreground hover:opacity-90"
+          >
+            Découvrir les ateliers
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
       <HomeProcess />
 
       <section className="bg-background">
