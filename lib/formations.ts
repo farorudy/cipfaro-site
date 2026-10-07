@@ -31,13 +31,13 @@ export const formations: Formation[] = [
     shortTitle: 'TP Formateur professionnel d’adultes', level: 'Parcours à définir après positionnement',
     duration: 'Durée précisée dans le devis', format: 'Modalités à confirmer', category: 'Formation de formateurs',
     summary: 'Préparez votre projet pour concevoir, animer et évaluer des formations pour adultes. Un entretien permet de préciser votre parcours.',
-    href: '/devis', actionLabel: 'Demander un devis FPA',
+    href: '/formations/tp-fpa', actionLabel: 'Découvrir le parcours FPA',
   },
   {
     slug: 'initiation-ia', title: 'Initiation à l’intelligence artificielle', shortTitle: 'Initiation à l’intelligence artificielle',
     level: 'Initiation', duration: '21 heures', format: 'Exercices accompagnés et tutorat', category: 'Numérique & IA',
     summary: 'Découvrez les usages de l’IA au quotidien et au travail : exercices accompagnés, tutorat et quiz corrigés. 590 € par participant. Dates et modalités confirmées avant inscription.',
-    href: 'https://www.cipfaro-formation.org/initiation-ia', actionLabel: 'Consulter le programme IA',
+    href: '/formations/initiation-ia', actionLabel: 'Consulter le programme IA',
   },
   {
     slug: 'bureautique',

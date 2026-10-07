@@ -135,12 +135,12 @@ export default function TpCipPage() {
 
             <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Admission et positionnement</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              L’admission comprend l’étude du dossier et du CV, un test de prérequis et un entretien de positionnement. Ce positionnement permet de vérifier l’adéquation du projet, d’identifier les besoins et, lorsque cela est possible, d’individualiser le parcours. Une réponse est apportée sous 48 heures ouvrées après réception de la demande ; la date d’entrée dépend ensuite des places disponibles, du calendrier de session et de l’accord de financement.
+              L’admission comprend l’étude du dossier et du CV, un test de prérequis et un entretien de positionnement. Ce positionnement permet de vérifier l’adéquation du projet, d’identifier les besoins et, lorsque cela est possible, d’individualiser le parcours. Le délai de traitement est précisé lors de l’échange avec l’organisme ; la date d’entrée dépend des places disponibles, du calendrier de session et de l’accord de financement.
             </p>
 
             <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Méthodes, moyens et évaluations</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              La formation alterne apports structurés, études de cas, mises en situation, travaux individuels et collectifs, accompagnement au dossier professionnel et immersion en entreprise. Les ressources numériques sont accessibles sur Moodle. La progression est vérifiée par des évaluations diagnostiques, formatives et des évaluations en cours de formation.
+              La formation alterne apports structurés, études de cas, mises en situation, travaux individuels et collectifs, accompagnement au dossier professionnel et immersion en entreprise. Les ressources numériques sont accessibles sur le portail de formation et sur Moodle selon le parcours. La progression est vérifiée par des évaluations diagnostiques, formatives et des évaluations en cours de formation.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               La certification est délivrée par le ministère chargé de l’Emploi après une session d’examen devant jury : mise en situation professionnelle, entretien technique, questionnement à partir de productions et entretien final. Le titre peut être obtenu en totalité ou progressivement par capitalisation des trois certificats de compétences professionnelles (CCP).
@@ -156,12 +156,12 @@ export default function TpCipPage() {
 
             <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Accessibilité et handicap</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Les besoins spécifiques sont étudiés dès la pré-inscription afin de rechercher les aménagements pédagogiques, techniques ou organisationnels adaptés. Contactez le référent handicap de C.I.P FARO au {site.phone} ou à <a href={site.emailHref} className="font-medium text-primary underline">{site.email}</a>.
+              Les besoins spécifiques sont étudiés dès la pré-inscription afin de rechercher les aménagements pédagogiques, techniques ou organisationnels adaptés. Pour être orienté vers l’interlocuteur chargé de votre demande, contactez C.I.P FARO au {site.phone} ou à <a href={site.emailHref} className="font-medium text-primary underline">{site.email}</a>.
             </p>
 
             <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">Résultats</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Les données 2026 ne sont pas encore disponibles ou suffisamment significatives. Elles seront publiées à l’issue de la session avec le nombre de bénéficiaires concerné. Consultez la page <Link href="/qualite" className="font-medium text-primary underline">Qualité et résultats</Link>.
+              Les données 2026 ne sont pas encore disponibles ou suffisamment significatives. Leur publication précisera la période, la méthode de calcul et le nombre de bénéficiaires concerné. Consultez la page <Link href="/qualite" className="font-medium text-primary underline">Qualité et résultats</Link>.
             </p>
 
             <h2 className="mt-12 font-heading text-2xl font-semibold text-foreground">

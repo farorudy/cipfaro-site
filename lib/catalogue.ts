@@ -17,7 +17,7 @@ export const domains = [
     description:
       "Montez en compétence sur les outils numériques, l'intelligence artificielle et la transformation digitale.",
     courses: [
-      ["Initiation à l’intelligence artificielle", "https://www.cipfaro-formation.org/initiation-ia"],
+      ["Initiation à l’intelligence artificielle", "/formations/initiation-ia"],
       [
         "Conseiller en médiation digitale et de l'IA",
         '/contact',
@@ -68,7 +68,7 @@ export const domains = [
     description:
       "Professionnalisez vos pratiques pédagogiques et d'animation de formation.",
     courses: [
-      ["TP – Formateur professionnel d'adultes", 'https://farorudy.fr/course/view.php?id=11'],
+      ["TP – Formateur professionnel d'adultes", '/formations/tp-fpa'],
     ],
   },
   {

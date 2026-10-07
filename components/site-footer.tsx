@@ -83,6 +83,7 @@ export function SiteFooter() {
             <Link href="/confidentialite" className="hover:text-foreground">Confidentialité</Link>
             <Link href="/conditions-generales" className="hover:text-foreground">Conditions générales de vente</Link>
             <Link href="/qualite" className="hover:text-foreground">Qualité et résultats</Link>
+            <Link href="/accessibilite" className="hover:text-foreground">Accessibilité et handicap</Link>
             <Link href="/reclamation" className="hover:text-foreground">Réclamation</Link>
           </nav>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
