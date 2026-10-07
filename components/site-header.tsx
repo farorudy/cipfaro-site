@@ -13,7 +13,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} — accueil`}>
           <span className="flex size-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
             <GraduationCap className="size-5" aria-hidden="true" />
@@ -22,13 +22,13 @@ export function SiteHeader() {
             <span className="font-heading text-lg font-semibold tracking-tight text-foreground">
               CIP FARO Rudy
             </span>
-            <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Organisme de formation
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigation principale">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Navigation principale">
           {nav.map((item) => {
             const active =
               item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
@@ -49,7 +49,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <a
             href={site.portal}
             target="_blank"
@@ -69,9 +69,10 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-md text-foreground lg:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-md text-foreground xl:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -79,7 +80,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div id="mobile-navigation" className="border-t border-border bg-background xl:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6" aria-label="Navigation mobile">
             {nav.map((item) => {
               const active =

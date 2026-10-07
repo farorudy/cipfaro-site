@@ -23,12 +23,24 @@ export default function Page() {
             Retrouvez les parcours proposés, votre espace apprenant et les ressources de vos formations.
             Les formateurs disposent d’un espace dédié à leurs activités pédagogiques.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a href={site.portal} className="rounded-md bg-primary px-5 py-3 font-semibold text-primary-foreground hover:opacity-90">Ouvrir le portail de formation</a>
-            <a href={`${site.portal}espace`} className="rounded-md border border-border bg-card px-5 py-3 font-semibold hover:bg-muted">Mon espace apprenant</a>
-            <a href={`${site.portal}formateurs`} className="rounded-md border border-border bg-card px-5 py-3 font-semibold hover:bg-muted">Espace formateur</a>
-            <a href={site.moodle} target="_blank" rel="noopener noreferrer" className="rounded-md px-5 py-3 font-medium text-primary hover:underline">Mes cours Moodle</a>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <a href={site.portal} className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary">
+              <span className="text-sm font-semibold text-primary">CHOISIR UN PARCOURS</span>
+              <h3 className="mt-3 font-heading text-xl font-semibold">Découvrir le portail</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">Consultez les parcours et présentez votre projet de formation.</p>
+            </a>
+            <a href={`${site.portal}espace`} className="rounded-xl bg-primary p-6 text-primary-foreground transition-opacity hover:opacity-95">
+              <span className="text-sm font-semibold">DÉJÀ INSCRIT ?</span>
+              <h3 className="mt-3 font-heading text-xl font-semibold">Mon espace apprenant</h3>
+              <p className="mt-2 leading-relaxed">Retrouvez vos cours, vos activités et votre suivi pédagogique.</p>
+            </a>
+            <a href={`${site.portal}formateurs`} className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary">
+              <span className="text-sm font-semibold text-primary">ÉQUIPE PÉDAGOGIQUE</span>
+              <h3 className="mt-3 font-heading text-xl font-semibold">Espace formateur</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">Accédez à vos formations attribuées et au suivi de vos stagiaires.</p>
+            </a>
           </div>
+          <p className="mt-6 text-sm text-muted-foreground">Vous utilisez la plateforme historique ? <a href={site.moodle} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline underline-offset-4">Ouvrir mes cours Moodle</a></p>
         </div>
       </section>
       <HomeWhy />

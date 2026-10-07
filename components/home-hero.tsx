@@ -12,13 +12,13 @@ const points = [
 export function HomeHero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-16">
         <div>
           <span className="inline-flex items-center rounded-full border border-border bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
             Formation professionnelle · Guadeloupe
           </span>
-          <h1 className="mt-5 text-balance font-heading text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Formez-vous. Accompagnez. Réussissez votre insertion.
+          <h1 className="mt-5 text-balance font-heading text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-5xl">
+            Votre projet professionnel commence ici.
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
             CIP FARO Rudy est votre organisme de formation aux Abymes. Nous
@@ -35,7 +35,7 @@ export function HomeHero() {
             ))}
           </ul>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/pre-inscription"
               className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
@@ -72,9 +72,9 @@ export function HomeHero() {
             />
           </div>
           <div className="absolute -bottom-5 -left-5 hidden rounded-xl border border-border bg-card p-5 shadow-md sm:block">
-            <p className="font-heading text-3xl font-semibold text-primary">100%</p>
+            <p className="font-heading text-2xl font-semibold text-primary">Guadeloupe</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              centré sur votre réussite
+              Formation et accompagnement
             </p>
           </div>
         </div>

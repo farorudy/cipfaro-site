@@ -63,7 +63,7 @@
   --secondary-foreground: oklch(0.35 0.06 205);
   --muted: oklch(0.95 0.01 100);
   --muted-foreground: oklch(0.5 0.02 220);
-  --accent: oklch(0.72 0.15 45);
+  --accent: oklch(0.52 0.15 45);
   --accent-foreground: oklch(0.99 0.01 95);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.9 0.01 200);
@@ -166,5 +166,13 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer base {
+  :focus-visible { outline: 3px solid var(--primary); outline-offset: 4px; }
+  html { scroll-padding-top: 6rem; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }
 }
