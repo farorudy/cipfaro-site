@@ -11,6 +11,7 @@ export const site = {
   nda: '01973171597',
   director: 'Rudy FARO',
   rncpCip: 'https://www.francecompetences.fr/recherche/rncp/37274/',
+  portal: 'https://www.cipfaro-formation.org/',
   moodle: 'https://farorudy.fr/my/',
   certificate: 'https://certif-icpf.org/certifies/rudy-faro',
   certificatePdf: '/certificat-B04066-2025.pdf',

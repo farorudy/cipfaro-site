@@ -51,12 +51,12 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <a
-            href={site.moodle}
+            href={site.portal}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
-            Accéder aux formations en ligne
+            Portail de formation
             <ExternalLink className="size-3.5" aria-hidden="true" />
           </a>
           <Link
@@ -102,13 +102,13 @@ export function SiteHeader() {
             })}
             <div className="mt-2 flex flex-col gap-2">
               <a
-                href={site.moodle}
+                href={site.portal}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-1.5 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground"
               >
-                Accéder aux formations en ligne
+                Portail de formation
                 <ExternalLink className="size-3.5" aria-hidden="true" />
               </a>
               <Link

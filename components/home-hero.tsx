@@ -49,12 +49,12 @@ export function HomeHero() {
               Demander un devis
             </Link>
             <a
-              href={site.moodle}
+              href={site.portal}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-1.5 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
             >
-              Accéder aux formations en ligne
+              Portail de formation
               <ExternalLink className="size-3.5" aria-hidden="true" />
             </a>
           </div>

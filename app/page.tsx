@@ -14,6 +14,23 @@ export default function Page() {
   return (
     <main>
       <HomeHero />
+      <section className="border-y border-border bg-secondary/50" aria-labelledby="portail-title">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 id="portail-title" className="font-heading text-2xl font-semibold text-foreground sm:text-3xl">
+            Votre portail de formation C.I.P FARO
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Retrouvez les parcours proposés, votre espace apprenant et les ressources de vos formations.
+            Les formateurs disposent d’un espace dédié à leurs activités pédagogiques.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={site.portal} className="rounded-md bg-primary px-5 py-3 font-semibold text-primary-foreground hover:opacity-90">Ouvrir le portail de formation</a>
+            <a href={`${site.portal}espace`} className="rounded-md border border-border bg-card px-5 py-3 font-semibold hover:bg-muted">Mon espace apprenant</a>
+            <a href={`${site.portal}formateurs`} className="rounded-md border border-border bg-card px-5 py-3 font-semibold hover:bg-muted">Espace formateur</a>
+            <a href={site.moodle} target="_blank" rel="noopener noreferrer" className="rounded-md px-5 py-3 font-medium text-primary hover:underline">Mes cours Moodle</a>
+          </div>
+        </div>
+      </section>
       <HomeWhy />
 
       <section className="bg-background">

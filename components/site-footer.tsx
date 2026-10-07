@@ -65,12 +65,12 @@ export function SiteFooter() {
             Accédez à vos cours et ressources en ligne.
           </p>
           <a
-            href={site.moodle}
+            href={site.portal}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Accéder aux formations en ligne
+            Portail de formation
             <ExternalLink className="size-3.5" aria-hidden="true" />
           </a>
         </div>
