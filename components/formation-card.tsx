@@ -35,7 +35,7 @@ export function FormationCard({ formation }: { formation: Formation }) {
 
       {formation.href ? (
         <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-          En savoir plus
+          {formation.actionLabel || "En savoir plus"}
           <ArrowRight className="size-4" aria-hidden="true" />
         </span>
       ) : (

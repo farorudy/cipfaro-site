@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Download, ExternalLink } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { CtaBand } from '@/components/cta-band'
+import { domains } from '@/lib/catalogue'
 import { site } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -11,93 +12,7 @@ export const metadata: Metadata = {
     "Des parcours professionnalisants, certifiants et adaptés aux besoins du territoire : insertion, numérique, IA, bureautique, entrepreneuriat et formation de formateurs.",
 }
 
-const domains = [
-  {
-    title: 'Insertion professionnelle',
-    description:
-      "Formations orientées accompagnement, insertion, médiation et développement de l'employabilité.",
-    courses: [
-      ['Conseiller en insertion professionnelle', 'https://farorudy.fr/course/view.php?id=2'],
-      [
-        "Facilitateur numérique de l'insertion professionnelle",
-        '/contact',
-      ],
-      ['Médiateur numérique', '/contact'],
-    ],
-  },
-  {
-    title: 'Numérique & IA',
-    description:
-      "Montez en compétence sur les outils numériques, l'intelligence artificielle et la transformation digitale.",
-    courses: [
-      ["Découverte de l'IA", '/contact'],
-      [
-        "Conseiller en médiation digitale et de l'IA",
-        '/contact',
-      ],
-      ['Microsoft Teams', '/contact'],
-      [
-        'Digitalisation des entreprises',
-        '/contact',
-      ],
-      ['Marketing digital', '/contact'],
-    ],
-  },
-  {
-    title: 'Bureautique',
-    description:
-      'Développez vos compétences opérationnelles en bureautique et outils de productivité.',
-    courses: [
-      ['Initiation à la bureautique', '/contact'],
-      ["Excel pour créateurs d'entreprise", '/contact'],
-      [
-        'Préparation à la certification Microsoft Office Specialist',
-        '/contact',
-      ],
-    ],
-  },
-  {
-    title: 'Entrepreneuriat',
-    description:
-      "Concevez, structurez et developpez votre projet d'entreprise avec une approche concrete.",
-    courses: [
-      ["Je deviens chef d'entreprise", '/contact'],
-      [
-        'Concevoir et developper un projet entrepreneurial',
-        '/contact',
-      ],
-      [
-        'Action de formation pour createurs et repreneurs',
-        '/contact',
-      ],
-      [
-        "Préparation à la certification Entrepreneur de la TPE",
-        '/contact',
-      ],
-    ],
-  },
-  {
-    title: 'Formation de formateurs',
-    description:
-      "Professionnalisez vos pratiques pédagogiques et d'animation de formation.",
-    courses: [
-      ["TP – Formateur professionnel d'adultes", 'https://farorudy.fr/course/view.php?id=11'],
-    ],
-  },
-  {
-    title: 'Audiovisuel & cohésion',
-    description:
-      'Formations techniques et humaines pour renforcer les compétences transversales et collaboratives.',
-    courses: [
-      [
-        "Maîtrisez les techniques de l'image et du son",
-        '/contact',
-      ],
-      ["Cohésion d'équipes", '/contact'],
-      ['Sauveteur secouriste du travail', '/contact'],
-    ],
-  },
-] as const
+
 
 export default function FormationsPage() {
   return (
@@ -127,8 +42,7 @@ export default function FormationsPage() {
                     <a
                       key={label}
                       href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+
                       className="group flex items-center justify-between gap-4 rounded-lg border border-border bg-secondary/35 px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent/60 hover:bg-accent/10"
                     >
                       <span>{label}</span>

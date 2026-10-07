@@ -10,14 +10,20 @@ export function ContactForm() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (sending) return
+    const data = Object.fromEntries(new FormData(e.currentTarget))
     setError('')
     setSending(true)
-    const data = Object.fromEntries(new FormData(e.currentTarget))
-    const response = await fetch('/api/formulaires', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'contact', ...data }) })
-    const result = await response.json()
-    setSending(false)
-    if (!response.ok) return setError(formFallbackMessage(result.error || 'Le formulaire est temporairement indisponible.'))
-    setSubmitted(true)
+    try {
+      const response = await fetch('/api/formulaires', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'contact', ...data }), signal: AbortSignal.timeout(20000) })
+      const result = await response.json()
+      if (!response.ok) throw new Error(result.error || 'La demande n’a pas pu être envoyée.')
+      setSubmitted(true)
+    } catch (cause) {
+      setError(formFallbackMessage(cause instanceof Error ? cause.message : 'Envoi impossible. Réessayez ou contactez-nous directement.'))
+    } finally {
+      setSending(false)
+    }
   }
 
   if (submitted) {
@@ -54,7 +60,8 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90 sm:w-auto"
+        disabled={sending}
+        className="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-60 sm:w-auto"
       >
         {sending ? 'Envoi en cours…' : 'Envoyer le message'}
       </button>

@@ -13,7 +13,7 @@ const steps = [
   'Complétez le formulaire de pré-inscription',
   'Un conseiller étudie votre demande',
   'Entretien de positionnement et de financement',
-  'Confirmation de votre inscription',
+  'Décision après vérification du dossier et du financement',
 ]
 
 export default function PreInscriptionPage() {
@@ -21,7 +21,7 @@ export default function PreInscriptionPage() {
     <main>
       <PageHero
         eyebrow="Pré-inscription"
-        title="Réservez votre place en quelques minutes"
+        title="Présentez votre projet de formation"
         description="La pré-inscription est gratuite et sans engagement. Elle nous permet d'étudier votre projet et de vous accompagner dans le choix de votre formation et de son financement."
       />
 

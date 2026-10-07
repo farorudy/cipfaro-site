@@ -9,6 +9,7 @@ export type Formation = {
   summary: string
   featured?: boolean
   href?: string
+  actionLabel?: string
 }
 
 export const formations: Formation[] = [
@@ -24,6 +25,19 @@ export const formations: Formation[] = [
       "Accompagnez les publics dans leur parcours d'insertion sociale et professionnelle. Une formation certifiante et reconnue par l'État.",
     featured: true,
     href: '/formations/tp-cip',
+  },
+  {
+    slug: 'tp-fpa', title: 'Titre professionnel Formateur professionnel d’adultes',
+    shortTitle: 'TP Formateur professionnel d’adultes', level: 'Parcours à définir après positionnement',
+    duration: 'Durée précisée dans le devis', format: 'Modalités à confirmer', category: 'Formation de formateurs',
+    summary: 'Préparez votre projet pour concevoir, animer et évaluer des formations pour adultes. Un entretien permet de préciser votre parcours.',
+    href: '/devis', actionLabel: 'Demander un devis FPA',
+  },
+  {
+    slug: 'initiation-ia', title: 'Initiation à l’intelligence artificielle', shortTitle: 'Initiation à l’intelligence artificielle',
+    level: 'Initiation', duration: '21 heures', format: 'Exercices accompagnés et tutorat', category: 'Numérique & IA',
+    summary: 'Découvrez les usages de l’IA au quotidien et au travail : exercices accompagnés, tutorat et quiz corrigés. 590 € par participant. Dates et modalités confirmées avant inscription.',
+    href: 'https://www.cipfaro-formation.org/initiation-ia', actionLabel: 'Consulter le programme IA',
   },
   {
     slug: 'bureautique',
@@ -83,31 +97,25 @@ export const formations: Formation[] = [
 ]
 
 export const tpCipBlocs = [
-  {
-    code: 'CCP 1',
-    title: "Accueillir pour analyser la demande et poser un diagnostic",
-    items: [
-      'Recevoir la personne et identifier ses besoins',
-      'Analyser la demande et la situation de la personne',
-      'Coopérer au sein du réseau de partenaires',
-    ],
-  },
-  {
-    code: 'CCP 2',
-    title: "Accompagner les personnes dans leur parcours d'insertion",
-    items: [
-      'Accompagner la personne dans la construction de son parcours',
-      "Mettre en œuvre une démarche de placement vers l'emploi",
-      "Faciliter l'intégration et le maintien dans l'emploi",
-    ],
-  },
-  {
-    code: 'CCP 3',
-    title: "Mettre en œuvre une offre de services auprès des employeurs",
-    items: [
-      'Déployer des actions de prospection auprès des employeurs',
-      'Apporter un appui technique aux employeurs',
-      'Concevoir et animer des ateliers thématiques',
-    ],
-  },
+  { code: 'CCP 1', title: "Accueillir pour analyser la demande des personnes et poser les bases d’un diagnostic partagé", items: [
+    'Informer sur les ressources en insertion et les services dématérialisés',
+    'Analyser la demande et poser les bases d’un diagnostic partagé',
+    'Exercer une veille informationnelle, technique et prospective',
+    'Travailler en équipe, en réseau et dans un cadre partenarial',
+    'Réaliser le traitement administratif et les écrits professionnels numériques',
+  ] },
+  { code: 'CCP 2', title: "Accompagner les personnes dans leur parcours d’insertion sociale et professionnelle", items: [
+    'Contractualiser et suivre le parcours d’insertion professionnelle',
+    'Accompagner l’élaboration du projet professionnel',
+    'Accompagner la réalisation des projets professionnels',
+    'Concevoir des ateliers thématiques favorisant l’insertion',
+    'Préparer et animer les ateliers thématiques',
+    'Analyser sa pratique professionnelle',
+  ] },
+  { code: 'CCP 3', title: "Mettre en œuvre une offre de services auprès des employeurs pour favoriser l’insertion professionnelle", items: [
+    'Déployer des actions de prospection avec les employeurs du territoire',
+    'Apporter un appui technique en matière de recrutement',
+    'Faciliter l’intégration et le maintien du salarié dans son environnement professionnel',
+    'Inscrire ses actes professionnels dans une démarche de développement durable et inclusive',
+  ] },
 ]

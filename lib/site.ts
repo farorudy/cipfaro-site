@@ -21,7 +21,7 @@ export const site = {
 export const nav = [
   { label: 'Accueil', href: '/' },
   { label: 'Nos formations', href: '/formations' },
-  { label: 'TP Conseiller en Insertion Pro.', href: '/formations/tp-cip' },
+  { label: 'TP CIP', href: '/formations/tp-cip' },
   { label: 'Pré-inscription', href: '/pre-inscription' },
   { label: 'Devis', href: '/devis' },
   { label: 'Contact', href: '/contact' },
