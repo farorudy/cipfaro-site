@@ -233,6 +233,7 @@ export default function TpCipPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-5xl px-6 py-8"><h2 className="text-2xl font-semibold">Résultats de la session du 30 juin 2026</h2><p>5 inscrits, 2 présents, 2 admis, 3 absents. Obtention parmi les présents : 100 % (2/2). Présentation : 40 % (2/5).</p><Link href="/qualite#session-cip-2026">Consulter les résultats datés, les blocs, les correspondances et les débouchés</Link></section>
       <CtaBand />
     </main>
   )
